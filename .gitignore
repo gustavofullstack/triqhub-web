@@ -6,9 +6,12 @@ dist/
 build/
 
 # Environment
-.env
-.env.local
-.env.*.local
+.env*
+!.env.example
+
+# Package manager auth/config (often contains tokens)
+.npmrc
+!.npmrc.example
 
 # Logs
 logs/
