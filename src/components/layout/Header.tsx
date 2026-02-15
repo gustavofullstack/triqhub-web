@@ -11,6 +11,7 @@ export default function Header() {
   const navigation = [
     { name: 'Recursos', href: '#features' },
     { name: 'Preços', href: '/precos' },
+    { name: 'Seja Parceiro', href: '/vendedor' },
     { name: 'Contato', href: '/contato' },
   ]
 
@@ -25,7 +26,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center">
               <Store className="h-5 w-5 text-white" />
             </div>
             <span className="text-xl font-bold text-gray-900">TriqHub</span>
@@ -64,7 +65,7 @@ export default function Header() {
             </a>
             <a
               href="https://admin.triqhub.com/register"
-              className="px-5 py-2.5 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+              className="px-5 py-2.5 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-colors"
             >
               Criar Loja Grátis
             </a>
@@ -120,7 +121,7 @@ export default function Header() {
                 </a>
                 <a
                   href="https://admin.triqhub.com/register"
-                  className="block px-4 py-3 bg-indigo-600 text-white rounded-lg font-semibold text-center"
+                  className="block px-4 py-3 bg-orange-500 text-white rounded-lg font-semibold text-center"
                 >
                   Criar Loja Grátis
                 </a>

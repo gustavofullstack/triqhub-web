@@ -13,8 +13,8 @@ export default function Hero() {
     <section className="relative overflow-hidden hero-gradient">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-indigo-200 rounded-full blur-3xl opacity-30" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 rounded-full blur-3xl opacity-30" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 rounded-full blur-3xl opacity-30" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-200 rounded-full blur-3xl opacity-30" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
@@ -25,9 +25,9 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 rounded-full mb-6">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-indigo-700">Novo: Integração com WhatsApp</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-6">
+              <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
+              <span className="text-sm font-medium text-orange-700">Novo: Integração com WhatsApp</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
@@ -44,7 +44,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
                 href="https://admin.triqhub.com/register"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-all hover:shadow-lg hover:shadow-indigo-500/25"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-all hover:shadow-lg hover:shadow-orange-500/25"
               >
                 Criar Loja Grátis
                 <ArrowRight className="h-5 w-5" />
@@ -104,10 +104,10 @@ export default function Hero() {
                         { icon: Users, label: 'Clientes', value: '89' },
                       ].map((stat, i) => (
                         <div key={i} className="bg-white p-3 rounded-lg shadow-sm">
-                          <stat.icon className="h-4 w-4 text-indigo-600 mb-1" />
-                          <p className="text-xs text-gray-500">{stat.label}</p>
-                          <p className="font-bold text-sm">{stat.value}</p>
-                        </div>
+                           <stat.icon className="h-4 w-4 text-orange-500 mb-1" />
+                           <p className="text-xs text-gray-500">{stat.label}</p>
+                           <p className="font-bold text-sm">{stat.value}</p>
+                         </div>
                       ))}
                     </div>
 
@@ -115,12 +115,12 @@ export default function Hero() {
                     <div className="bg-white p-4 rounded-lg shadow-sm">
                       <div className="h-24 flex items-end gap-2">
                         {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
-                          <div
-                            key={i}
-                            className="flex-1 bg-indigo-500 rounded-t opacity-80"
-                            style={{ height: `${h}%` }}
-                          />
-                        ))}
+                           <div
+                             key={i}
+                             className="flex-1 bg-orange-500 rounded-t opacity-80"
+                             style={{ height: `${h}%` }}
+                           />
+                         ))}
                       </div>
                     </div>
 
@@ -164,14 +164,14 @@ export default function Hero() {
               className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4 hidden lg:block"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
-                  <ShoppingCart className="h-5 w-5 text-indigo-600" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Novo pedido</p>
-                  <p className="font-bold">#TRQ-1234</p>
-                </div>
-              </div>
+                 <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                   <ShoppingCart className="h-5 w-5 text-orange-500" />
+                 </div>
+                 <div>
+                   <p className="text-sm text-gray-500">Novo pedido</p>
+                   <p className="font-bold">#TRQ-1234</p>
+                 </div>
+               </div>
             </motion.div>
           </motion.div>
         </div>

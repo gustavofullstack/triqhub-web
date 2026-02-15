@@ -119,7 +119,7 @@ export default function Pricing() {
               className={cn(
                 "relative rounded-2xl p-6",
                 plan.highlighted
-                  ? "bg-indigo-600 text-white shadow-xl shadow-indigo-500/25 lg:scale-105 z-10"
+                  ? "bg-orange-500 text-white shadow-xl shadow-orange-500/25 lg:scale-105 z-10"
                   : "bg-white border border-gray-200"
               )}
             >
@@ -139,9 +139,9 @@ export default function Pricing() {
                   {plan.name}
                 </h3>
                 <p className={cn(
-                  "text-sm",
-                  plan.highlighted ? "text-indigo-200" : "text-gray-500"
-                )}>
+                   "text-sm",
+                   plan.highlighted ? "text-orange-100" : "text-gray-500"
+                 )}>
                   {plan.description}
                 </p>
               </div>
@@ -163,13 +163,13 @@ export default function Pricing() {
                       {plan.price === 0 ? 'Grátis' : `R$ ${plan.price}`}
                     </span>
                     {plan.price > 0 && (
-                      <span className={cn(
-                        "text-sm",
-                        plan.highlighted ? "text-indigo-200" : "text-gray-500"
-                      )}>
-                        /mês
-                      </span>
-                    )}
+                       <span className={cn(
+                         "text-sm",
+                         plan.highlighted ? "text-orange-100" : "text-gray-500"
+                       )}>
+                         /mês
+                       </span>
+                     )}
                   </>
                 )}
               </div>
@@ -178,9 +178,9 @@ export default function Pricing() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2">
                     <Check className={cn(
-                      "h-4 w-4 flex-shrink-0 mt-0.5",
-                      plan.highlighted ? "text-indigo-200" : "text-indigo-600"
-                    )} />
+                       "h-4 w-4 flex-shrink-0 mt-0.5",
+                       plan.highlighted ? "text-orange-100" : "text-orange-500"
+                     )} />
                     <span className={cn(
                       "text-sm",
                       plan.highlighted ? "text-white" : "text-gray-600"
@@ -192,14 +192,14 @@ export default function Pricing() {
               </ul>
 
               <a
-                href="https://admin.triqhub.com/register"
-                className={cn(
-                  "block w-full py-2.5 px-4 rounded-lg font-semibold text-center text-sm transition-colors",
-                  plan.highlighted
-                    ? "bg-white text-indigo-600 hover:bg-indigo-50"
-                    : "bg-indigo-600 text-white hover:bg-indigo-700"
-                )}
-              >
+                 href="https://admin.triqhub.com/register"
+                 className={cn(
+                   "block w-full py-2.5 px-4 rounded-lg font-semibold text-center text-sm transition-colors",
+                   plan.highlighted
+                     ? "bg-white text-orange-500 hover:bg-orange-50"
+                     : "bg-orange-500 text-white hover:bg-orange-600"
+                 )}
+               >
                 {plan.cta}
               </a>
             </motion.div>

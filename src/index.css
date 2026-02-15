@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #6366f1;
+  --primary: #f97316;
   --primary-foreground: #ffffff;
   --background: #ffffff;
   --foreground: #0f172a;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
   --border: #e2e8f0;
-  --ring: #6366f1;
+  --ring: #f97316;
   --radius: 0.75rem;
 }
 
@@ -80,7 +80,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -88,5 +88,23 @@ body {
 
 /* Hero gradient background */
 .hero-gradient {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #f0f9ff 50%, #fae8ff 75%, #f0f9ff 100%);
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 25%, #fff7ed 50%, #fed7aa 75%, #fff7ed 100%);
+}
+
+/* Orange gradient text */
+.gradient-text-orange {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark page styles */
+.dark-page {
+  background: linear-gradient(180deg, #111827 0%, #000000 100%);
+}
+
+/* Glow effect for orange */
+.glow-orange {
+  box-shadow: 0 0 40px rgba(249, 115, 22, 0.3);
 }

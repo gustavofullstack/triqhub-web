@@ -63,7 +63,7 @@ export default function Features() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 text-sm font-medium rounded-full mb-4"
+            className="inline-block px-4 py-1.5 bg-orange-100 text-orange-700 text-sm font-medium rounded-full mb-4"
           >
             Recursos
           </motion.span>
@@ -96,10 +96,10 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300"
+              className="group p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg hover:shadow-orange-500/5 transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-600 transition-colors">
-                <feature.icon className="h-6 w-6 text-indigo-600 group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-500 transition-colors">
+                <feature.icon className="h-6 w-6 text-orange-500 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {feature.title}

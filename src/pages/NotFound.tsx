@@ -20,7 +20,7 @@ export default function NotFound() {
 
         <Link
           to="/"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-colors"
         >
           <Home className="h-5 w-5" />
           Voltar ao Início

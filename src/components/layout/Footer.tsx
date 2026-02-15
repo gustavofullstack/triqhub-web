@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center">
                 <Store className="h-5 w-5 text-white" />
               </div>
               <span className="text-xl font-bold">TriqHub</span>
