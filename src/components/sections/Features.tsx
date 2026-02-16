@@ -17,7 +17,7 @@ export default function Features() {
     <section id="recursos" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-16">
-          <span className="text-[10px] sm:text-xs font-black text-orange-600 uppercase tracking-widest">
+          <span className="text-xs sm:text-sm font-black text-orange-600 uppercase tracking-widest">
             Recursos
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mt-2">
@@ -38,11 +38,11 @@ export default function Features() {
               transition={{ delay: index * 0.05 }}
               className="group p-3 sm:p-6 bg-gray-50 hover:bg-white rounded-xl sm:rounded-2xl border border-gray-100 hover:shadow-lg transition-all"
             >
-              <div className="w-8 h-8 sm:w-12 sm:h-12 bg-orange-100 text-orange-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-4 group-hover:bg-orange-500 group-hover:text-white transition-colors">
-                <feature.icon size={18} className="sm:w-6 sm:h-6" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 text-orange-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-4 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                <feature.icon size={20} className="sm:w-6 sm:h-6" />
               </div>
-              <h3 className="text-xs sm:text-base lg:text-lg font-bold text-gray-900 mb-1 sm:mb-2">{feature.title}</h3>
-              <p className="text-[10px] sm:text-sm text-gray-600 hidden sm:block">{feature.description}</p>
+              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-1 sm:mb-2">{feature.title}</h3>
+              <p className="text-xs sm:text-sm text-gray-600 hidden sm:block">{feature.description}</p>
             </motion.div>
           ))}
         </div>

@@ -26,17 +26,17 @@ export default function Header() {
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-2 sm:gap-3">
           <img
             src="/logo.jpeg"
             alt="TriqHub"
-            className="h-10 w-10 rounded-xl object-cover"
+            className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg sm:rounded-xl object-cover"
           />
-          <span className="text-xl font-black text-gray-900">TriqHub</span>
+          <span className="text-lg sm:text-xl font-black text-gray-900">TriqHub</span>
         </Link>
 
-        {/* Nav Desktop */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Nav Desktop - lg and up */}
+        <nav className="hidden lg:flex items-center gap-8">
           {navigation.map((item) => (
             item.href.startsWith('#') ? (
               <a
@@ -64,7 +64,7 @@ export default function Header() {
         </nav>
 
         {/* CTA */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <a
             href="https://admin.triqhub.com"
             className="hidden sm:block text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors"
@@ -73,15 +73,16 @@ export default function Header() {
           </a>
           <Link
             to="/vendedor"
-            className="h-10 px-5 bg-orange-500 hover:bg-orange-600 text-white rounded-xl text-sm font-bold transition-colors"
+            className="h-9 sm:h-10 px-4 sm:px-5 bg-orange-500 hover:bg-orange-600 text-white rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold transition-colors"
           >
             Criar Loja
           </Link>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - MOVED TO lg:hidden for better tablet support */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-gray-900"
+            className="lg:hidden p-2 text-gray-600 hover:text-gray-900 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            aria-label="Menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -95,7 +96,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-100"
+            className="lg:hidden bg-white border-t border-gray-100"
           >
             <div className="px-4 py-4 space-y-3">
               {navigation.map((item) => (
@@ -104,7 +105,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-4 py-2 text-sm font-semibold text-gray-600 hover:text-orange-600"
+                    className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-orange-600 min-h-[44px]"
                   >
                     {item.name}
                   </a>
@@ -113,7 +114,7 @@ export default function Header() {
                     key={item.name}
                     to={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-4 py-2 text-sm font-semibold text-gray-600 hover:text-orange-600"
+                    className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-orange-600 min-h-[44px]"
                   >
                     {item.name}
                   </Link>
@@ -122,14 +123,14 @@ export default function Header() {
               <div className="pt-4 border-t border-gray-100 space-y-3">
                 <a
                   href="https://admin.triqhub.com"
-                  className="block px-4 py-2 text-sm font-semibold text-gray-600"
+                  className="block px-4 py-3 text-sm font-semibold text-gray-600 min-h-[44px]"
                 >
                   Entrar
                 </a>
                 <Link
                   to="/vendedor"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-3 bg-orange-500 text-white rounded-xl text-sm font-bold text-center"
+                  className="block px-4 py-3 bg-orange-500 text-white rounded-xl text-sm font-bold text-center min-h-[44px] leading-[44px]"
                 >
                   Criar Loja
                 </Link>

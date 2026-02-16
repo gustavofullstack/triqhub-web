@@ -12,9 +12,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold mb-4 sm:mb-6"
+            className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6"
           >
-            <Sparkles size={12} className="sm:w-3.5 sm:h-3.5" />
+            <Sparkles size={14} />
             Plataforma #1 para Lojistas
           </motion.div>
 
@@ -48,14 +48,14 @@ export default function Hero() {
           >
             <Link
               to="/vendedor"
-              className="h-12 sm:h-14 px-6 sm:px-8 bg-gray-900 hover:bg-black text-white rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+              className="h-12 sm:h-14 px-6 sm:px-8 bg-gray-900 hover:bg-black text-white rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
             >
               Começar Agora
-              <ArrowRight size={16} className="sm:w-5 sm:h-5" />
+              <ArrowRight size={18} />
             </Link>
             <a
               href="#recursos"
-              className="h-12 sm:h-14 px-6 sm:px-8 bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-700 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-colors flex items-center justify-center"
+              className="h-12 sm:h-14 px-6 sm:px-8 bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-700 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base transition-colors flex items-center justify-center"
             >
               Ver Recursos
             </a>
@@ -78,7 +78,7 @@ export default function Hero() {
               </div>
               <div className="bg-white rounded-lg sm:rounded-xl overflow-hidden">
                 <div className="aspect-video p-3 sm:p-6">
-                  {/* Stats */}
+                  {/* Stats - MINIMUM 12px TEXT */}
                   <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-6">
                     {[
                       { icon: ShoppingCart, label: 'Pedidos', value: '127', color: 'text-blue-600' },
@@ -87,13 +87,13 @@ export default function Hero() {
                     ].map((stat, i) => (
                       <div key={i} className="bg-gray-50 p-2 sm:p-4 rounded-lg sm:rounded-xl">
                         <stat.icon className={`h-4 w-4 sm:h-5 sm:w-5 ${stat.color} mb-1 sm:mb-2`} />
-                        <p className="text-[8px] sm:text-xs text-gray-500">{stat.label}</p>
+                        <p className="text-xs sm:text-sm text-gray-500">{stat.label}</p>
                         <p className="text-sm sm:text-lg font-bold text-gray-900">{stat.value}</p>
                       </div>
                     ))}
                   </div>
 
-                  {/* Chart */}
+                  {/* Chart - hidden on mobile */}
                   <div className="bg-gray-50 p-2 sm:p-4 rounded-lg sm:rounded-xl mb-3 sm:mb-4 hidden sm:block">
                     <div className="h-16 sm:h-24 flex items-end gap-1 sm:gap-2">
                       {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 50].map((h, i) => (
@@ -108,15 +108,15 @@ export default function Hero() {
 
                   {/* Orders */}
                   <div className="bg-gray-50 p-2 sm:p-4 rounded-lg sm:rounded-xl">
-                    <p className="text-[8px] sm:text-xs font-semibold text-gray-500 mb-2 sm:mb-3">Pedidos Recentes</p>
+                    <p className="text-xs sm:text-sm font-semibold text-gray-500 mb-2 sm:mb-3">Pedidos Recentes</p>
                     <div className="space-y-1.5 sm:space-y-2">
                       {[1, 2, 3].map((i) => (
-                        <div key={i} className="flex items-center gap-2 sm:gap-3 bg-white p-1.5 sm:p-2 rounded-lg">
-                          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 rounded-lg" />
-                          <div className="flex-1">
+                        <div key={i} className="flex items-center gap-2 sm:gap-3 bg-white p-2 sm:p-2 rounded-lg">
+                          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 rounded-lg flex-shrink-0" />
+                          <div className="flex-1 min-w-0">
                             <div className="h-2 sm:h-3 bg-gray-200 rounded w-16 sm:w-24" />
                           </div>
-                          <div className="h-2 sm:h-3 bg-orange-200 rounded w-8 sm:w-12" />
+                          <div className="h-2 sm:h-3 bg-orange-200 rounded w-10 sm:w-12 flex-shrink-0" />
                         </div>
                       ))}
                     </div>
