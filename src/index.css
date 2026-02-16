@@ -1,6 +1,12 @@
 @import "tailwindcss";
-@source "./pages/**/*.tsx";
-@source "./components/**/*.tsx";
+@source "./**/*.tsx";
+@source "./**/*.ts";
+
+/* Framer Motion fallback - ensure elements are visible */
+[data-framer-component-type] {
+  opacity: 1 !important;
+  transform: none !important;
+}
 
 :root {
   /* Backgrounds */
