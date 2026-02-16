@@ -26,11 +26,11 @@ export default function Header() {
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-3">
           <img
-            src="/logo.svg"
+            src="/logo.jpeg"
             alt="TriqHub"
-            className="h-10 w-10"
+            className="h-10 w-10 rounded-xl object-cover"
           />
           <span className="text-xl font-black text-gray-900">TriqHub</span>
         </Link>
