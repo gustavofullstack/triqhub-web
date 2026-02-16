@@ -9,9 +9,9 @@ interface LayoutProps {
 
 export default function Layout({ children, dark = false }: LayoutProps) {
   return (
-    <div className={`min-h-screen flex flex-col overflow-x-hidden ${dark ? 'bg-gray-50' : 'bg-white'}`}>
+    <div className={`min-h-screen w-full flex flex-col items-center selection:bg-orange-100 selection:text-orange-900 ${dark ? 'bg-gray-50' : 'bg-white'}`}>
       <Header />
-      <main className="flex-1 w-full">
+      <main className="w-full flex-1 flex flex-col items-center pt-20 animate-entrance">
         {children}
       </main>
       <Footer />

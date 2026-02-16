@@ -19,20 +19,23 @@ export default function Header() {
 
   return (
     <header className={cn(
-      "sticky top-0 z-50 transition-all duration-300",
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-500 flex justify-center",
       isHome || isSellerPage
-        ? "bg-white/90 backdrop-blur-md border-b border-gray-100"
+        ? "bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm"
         : "bg-white border-b border-gray-100"
     )}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 sm:gap-3">
-          <img
-            src="/logo.jpeg"
-            alt="TriqHub"
-            className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg sm:rounded-xl object-cover"
-          />
-          <span className="text-lg sm:text-xl font-black text-gray-900">TriqHub</span>
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="relative">
+            <img
+              src="/logo.jpeg"
+              alt="TriqHub"
+              className="h-10 w-10 sm:h-12 sm:w-12 rounded-2xl object-cover shadow-lg group-hover:scale-110 transition-transform duration-300"
+            />
+            <div className="absolute inset-0 rounded-2xl ring-1 ring-black/5" />
+          </div>
+          <span className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">TriqHub</span>
         </Link>
 
         {/* Nav Desktop - md (768px) and up */}

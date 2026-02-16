@@ -4,17 +4,17 @@ import { ArrowRight, Sparkles, ShoppingCart, TrendingUp, Users } from 'lucide-re
 
 export default function Hero() {
   return (
-    <section className="relative pt-16 sm:pt-20 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-white overflow-hidden">
+    <section className="relative pt-20 sm:pt-28 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto relative z-10">
+        <div className="text-center max-w-4xl mx-auto relative z-10">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6"
+            className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-xs sm:text-sm font-bold mb-8"
           >
-            <Sparkles size={14} />
+            <Sparkles size={14} className="animate-pulse" />
             Plataforma #1 para Lojistas
           </motion.div>
 
@@ -22,40 +22,40 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight mb-4 sm:mb-6"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-gray-900 tracking-tight leading-[1.1] mb-8 text-balance"
           >
             Sua Loja Online em
-            <span className="text-orange-500"> Minutos</span>
+            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent"> Minutos</span>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 px-2"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto text-balance"
           >
-            Crie sua loja virtual profissional, gerencie produtos e vendas, e receba pagamentos via PIX.
+            Crie sua loja virtual profissional, gerencie produtos e vendas, e receba pagamentos via PIX com a menor taxa do mercado.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
           >
             <Link
               to="/vendedor"
-              className="h-12 sm:h-14 px-6 sm:px-8 bg-gray-900 hover:bg-black text-white rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+              className="w-full sm:w-auto h-14 px-10 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-base tracking-wide transition-all hover:scale-105 active:scale-95 shadow-lg shadow-orange-200 flex items-center justify-center gap-2"
             >
               Começar Agora
-              <ArrowRight size={18} />
+              <ArrowRight size={20} />
             </Link>
             <a
               href="#recursos"
-              className="h-12 sm:h-14 px-6 sm:px-8 bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-700 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base transition-colors flex items-center justify-center"
+              className="w-full sm:w-auto h-14 px-10 bg-white border-2 border-gray-100 hover:border-gray-200 text-gray-700 rounded-2xl font-bold text-base transition-all hover:bg-gray-50 flex items-center justify-center"
             >
               Ver Recursos
             </a>
