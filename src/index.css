@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "./pages/**/*.tsx";
+@source "./components/**/*.tsx";
 
 :root {
   /* Backgrounds */
