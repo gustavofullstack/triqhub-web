@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
-import { Check } from 'lucide-react'
+import { Check, Sparkles } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 
 const plans = [
   {
-    name: 'Grátis',
+    name: 'Básico',
     price: 0,
     description: 'Perfeito para começar',
     features: [
@@ -16,11 +17,13 @@ const plans = [
     ],
     cta: 'Começar Grátis',
     highlighted: false,
+    link: 'https://admin.triqhub.com/register',
   },
   {
-    name: 'Starter',
-    price: 79,
+    name: 'Pro',
+    price: 100,
     description: 'Para negócios em crescimento',
+    priceNote: 'taxa única',
     features: [
       '1 loja',
       'Produtos ilimitados',
@@ -28,40 +31,42 @@ const plans = [
       'Relatórios de vendas',
       'Integração WhatsApp',
       'Suporte prioritário',
+      'Pagamentos via PIX',
     ],
     cta: 'Começar Agora',
     highlighted: true,
     badge: 'Mais Popular',
+    link: '/vendedor',
   },
   {
-    name: 'Pro',
-    price: 199,
-    description: 'Para negócios estabelecidos',
+    name: 'Enterprise',
+    price: null,
+    description: 'Solução personalizada',
     features: [
-      'Até 3 lojas',
-      'Produtos ilimitados',
+      'Lojas ilimitadas',
+      'Tudo do Pro +',
       'API completa',
       'Múltiplos usuários',
-      'Relatórios avançados',
+      'Servidor dedicado',
       'Suporte 24/7',
-      'Personalização avançada',
     ],
     cta: 'Falar com Vendas',
     highlighted: false,
+    link: '/contato',
   },
 ]
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 lg:py-32 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1.5 bg-orange-100 text-orange-700 text-sm font-medium rounded-full mb-4"
+            className="text-xs font-black text-orange-600 uppercase tracking-widest"
           >
             Preços
           </motion.span>
@@ -70,7 +75,7 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl sm:text-4xl font-black text-gray-900 mt-2"
           >
             Planos que cabem no seu bolso
           </motion.h2>
@@ -79,14 +84,14 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-gray-600"
+            className="text-gray-600 mt-4"
           >
             Comece grátis e escale conforme seu negócio cresce. Sem surpresas.
           </motion.p>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -95,15 +100,16 @@ export default function Pricing() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className={cn(
-                "relative rounded-2xl p-6 lg:p-8",
+                "relative rounded-3xl p-6 sm:p-8",
                 plan.highlighted
-                  ? "bg-orange-500 text-white shadow-xl shadow-orange-500/25 scale-105 z-10"
+                  ? "bg-gray-900 text-white shadow-2xl scale-105 z-10"
                   : "bg-white border border-gray-200"
               )}
             >
               {plan.badge && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="px-3 py-1 bg-amber-500 text-white text-xs font-semibold rounded-full">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-orange-500 text-white text-xs font-bold rounded-full">
+                    <Sparkles size={12} />
                     {plan.badge}
                   </span>
                 </div>
@@ -111,33 +117,44 @@ export default function Pricing() {
 
               <div className="mb-6">
                 <h3 className={cn(
-                  "text-xl font-bold mb-2",
+                  "text-xl font-bold mb-1",
                   plan.highlighted ? "text-white" : "text-gray-900"
                 )}>
                   {plan.name}
                 </h3>
                 <p className={cn(
-                   "text-sm",
-                   plan.highlighted ? "text-orange-100" : "text-gray-500"
-                 )}>
+                  "text-sm",
+                  plan.highlighted ? "text-gray-400" : "text-gray-500"
+                )}>
                   {plan.description}
                 </p>
               </div>
 
               <div className="mb-6">
-                <span className={cn(
-                  "text-4xl font-bold",
-                  plan.highlighted ? "text-white" : "text-gray-900"
-                )}>
-                  {plan.price === 0 ? 'Grátis' : `R$ ${plan.price}`}
-                </span>
-                {plan.price > 0 && (
+                {plan.price === null ? (
                   <span className={cn(
-                     "text-sm",
-                     plan.highlighted ? "text-orange-100" : "text-gray-500"
-                   )}>
-                     /mês
-                   </span>
+                    "text-3xl font-black",
+                    plan.highlighted ? "text-white" : "text-gray-900"
+                  )}>
+                    Personalizado
+                  </span>
+                ) : (
+                  <div className="flex items-baseline gap-1">
+                    <span className={cn(
+                      "text-4xl font-black",
+                      plan.highlighted ? "text-white" : "text-gray-900"
+                    )}>
+                      {plan.price === 0 ? 'Grátis' : `R$ ${plan.price}`}
+                    </span>
+                    {plan.priceNote && (
+                      <span className={cn(
+                        "text-sm font-medium",
+                        plan.highlighted ? "text-gray-400" : "text-gray-500"
+                      )}>
+                        {plan.priceNote}
+                      </span>
+                    )}
+                  </div>
                 )}
               </div>
 
@@ -145,12 +162,12 @@ export default function Pricing() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2">
                     <Check className={cn(
-                       "h-5 w-5 flex-shrink-0 mt-0.5",
-                       plan.highlighted ? "text-orange-100" : "text-orange-500"
-                     )} />
+                      "h-5 w-5 flex-shrink-0 mt-0.5",
+                      plan.highlighted ? "text-orange-400" : "text-orange-500"
+                    )} />
                     <span className={cn(
                       "text-sm",
-                      plan.highlighted ? "text-white" : "text-gray-600"
+                      plan.highlighted ? "text-gray-300" : "text-gray-600"
                     )}>
                       {feature}
                     </span>
@@ -158,33 +175,47 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a
-                 href="https://admin.triqhub.com/register"
-                 className={cn(
-                   "block w-full py-3 px-4 rounded-lg font-semibold text-center transition-colors",
-                   plan.highlighted
-                     ? "bg-white text-orange-500 hover:bg-orange-50"
-                     : "bg-orange-500 text-white hover:bg-orange-600"
-                 )}
-               >
-                {plan.cta}
-              </a>
+              {plan.link.startsWith('/') ? (
+                <Link
+                  to={plan.link}
+                  className={cn(
+                    "block w-full h-12 rounded-xl font-bold text-sm text-center leading-[48px] transition-colors",
+                    plan.highlighted
+                      ? "bg-orange-500 hover:bg-orange-600 text-white"
+                      : "bg-gray-900 hover:bg-black text-white"
+                  )}
+                >
+                  {plan.cta}
+                </Link>
+              ) : (
+                <a
+                  href={plan.link}
+                  className={cn(
+                    "block w-full h-12 rounded-xl font-bold text-sm text-center leading-[48px] transition-colors",
+                    plan.highlighted
+                      ? "bg-orange-500 hover:bg-orange-600 text-white"
+                      : "bg-gray-900 hover:bg-black text-white"
+                  )}
+                >
+                  {plan.cta}
+                </a>
+              )}
             </motion.div>
           ))}
         </div>
 
-        {/* FAQ Link */}
+        {/* Trust Note */}
         <motion.p
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           viewport={{ once: true }}
-           className="text-center text-gray-500 mt-12"
-         >
-           Tem dúvidas?{' '}
-           <a href="#" className="text-orange-500 hover:text-orange-600 font-medium">
-             Veja nossas perguntas frequentes
-           </a>
-         </motion.p>
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center text-gray-500 text-sm mt-12"
+        >
+          Tem dúvidas?{' '}
+          <Link to="/contato" className="text-orange-600 hover:text-orange-700 font-semibold">
+            Fale conosco
+          </Link>
+        </motion.p>
       </div>
     </section>
   )
