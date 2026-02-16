@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export default function Header() {
@@ -27,9 +27,11 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
-            <Zap size={20} className="text-white" fill="white" />
-          </div>
+          <img
+            src="/logo.svg"
+            alt="TriqHub"
+            className="h-10 w-10"
+          />
           <span className="text-xl font-black text-gray-900">TriqHub</span>
         </Link>
 
