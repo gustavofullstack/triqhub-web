@@ -35,14 +35,14 @@ export default function Header() {
           <span className="text-lg sm:text-xl font-black text-gray-900">TriqHub</span>
         </Link>
 
-        {/* Nav Desktop - lg and up */}
-        <nav className="hidden lg:flex items-center gap-8">
+        {/* Nav Desktop - md (768px) and up */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navigation.map((item) => (
             item.href.startsWith('#') ? (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-semibold text-gray-600 hover:text-orange-600 transition-colors"
+                className="text-xs sm:text-sm font-semibold text-gray-600 hover:text-orange-600 transition-colors"
               >
                 {item.name}
               </a>
@@ -51,7 +51,7 @@ export default function Header() {
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "text-sm font-semibold transition-colors",
+                  "text-xs sm:text-sm font-semibold transition-colors",
                   location.pathname === item.href
                     ? "text-orange-600"
                     : "text-gray-600 hover:text-orange-600"
@@ -67,7 +67,7 @@ export default function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href="https://admin.triqhub.com"
-            className="hidden sm:block text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors"
+            className="hidden sm:block text-xs sm:text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors"
           >
             Entrar
           </a>
@@ -78,34 +78,34 @@ export default function Header() {
             Criar Loja
           </Link>
 
-          {/* Mobile Menu Button - MOVED TO lg:hidden for better tablet support */}
+          {/* Mobile Menu Button - apenas em telas menores que md (768px) */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-600 hover:text-gray-900 min-h-[44px] min-w-[44px] flex items-center justify-center"
-            aria-label="Menu"
+            className="md:hidden p-2 text-gray-600 hover:text-gray-900 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            aria-label="Abrir menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - apenas em telas menores que md */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100"
+            className="md:hidden bg-white border-t border-gray-100"
           >
-            <div className="px-4 py-4 space-y-3">
+            <div className="px-4 py-4 space-y-2">
               {navigation.map((item) => (
                 item.href.startsWith('#') ? (
                   <a
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-orange-600 min-h-[44px]"
+                    className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-orange-600"
                   >
                     {item.name}
                   </a>
@@ -114,23 +114,23 @@ export default function Header() {
                     key={item.name}
                     to={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-orange-600 min-h-[44px]"
+                    className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-orange-600"
                   >
                     {item.name}
                   </Link>
                 )
               ))}
-              <div className="pt-4 border-t border-gray-100 space-y-3">
+              <div className="pt-4 border-t border-gray-100 space-y-2">
                 <a
                   href="https://admin.triqhub.com"
-                  className="block px-4 py-3 text-sm font-semibold text-gray-600 min-h-[44px]"
+                  className="block px-4 py-3 text-sm font-semibold text-gray-600"
                 >
                   Entrar
                 </a>
                 <Link
                   to="/vendedor"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-3 bg-orange-500 text-white rounded-xl text-sm font-bold text-center min-h-[44px] leading-[44px]"
+                  className="block px-4 py-3 bg-orange-500 text-white rounded-xl text-sm font-bold text-center"
                 >
                   Criar Loja
                 </Link>
